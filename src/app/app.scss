@@ -14,3 +14,47 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+/* Navbar styles */
+
+.toolbar-background {
+  background-color: color($colors, primary) !important;
+}
+
+.toolbar-title {
+  color: #fff !important;
+  font-family: $font-family-base !important;
+  border-left: 1px solid rgba(255,255,255,0.5);
+  font-weight: 700;
+  
+}
+.bar-button {
+  color: #fff;
+  .icon {
+    height: 20px;
+    font-size: 30px;
+  }
+}
+
+/* Sidemenu style */
+
+ion-menu {
+  .header {
+    .toolbar-title {
+      border-left: none;
+    }
+  }
+  .item {
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  }
+}
+
+/* Element Styles */
+
+button {
+  font-family: $font-family-base !important;
+  font-weight: 600 !important;
+  border-radius: 0px !important;
+  height: 40px !important;
+  margin: 0px 5px auto !important;
+}
