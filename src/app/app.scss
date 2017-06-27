@@ -15,6 +15,64 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+/* Regular */
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato'), local('Lato'), url(../assets/fonts/Lato-Regular.ttf) format('truetype');
+}
+
+/* Light */
+
+@font-face {
+  font-family: 'Lato-Light';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato-Light'), local('Lato-Light'), url(../assets/fonts/Lato-Light.ttf) format('truetype');
+}
+
+/* Header styles */
+
+h1 {
+  font-family: $font-family-base !important;
+}
+h2 {font-family: $font-family-base !important;
+}
+h3 {
+    font-family: $font-family-base !important;
+}
+h4 {
+    font-family: $font-family-base !important;
+}
+h5 {
+    font-family: $font-family-base !important;
+}
+h6 {
+    font-family: $font-family-base !important;
+}
+p {
+    font-family: $font-family-base !important;
+}
+strong {
+    font-family: $font-family-base !important;
+}
+
+/* Element styles */
+
+button {
+  font-family: $font-family-base !important;
+  font-weight: 600 !important;
+  border-radius: 0px !important;
+  height: 40px !important;
+  margin: 0 auto !important;
+}
+
+.label {
+  font-family: $font-family-base !important;
+}
+
 /* Navbar styles */
 
 .toolbar-background {
@@ -36,6 +94,10 @@
   }
 }
 
+.bar-button:hover {
+  color: rgba(255,255,255,0.5) !important;
+}
+
 /* Sidemenu style */
 
 ion-menu {
@@ -46,6 +108,9 @@ ion-menu {
   }
   .item {
     border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  }
+  .menu-logo {
+    width: 100px;
   }
 }
 

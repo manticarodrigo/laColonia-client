@@ -1,24 +1,60 @@
 page-search {
-  .selected-item {
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+  .page-title {
+    img {
+      width: 30px;
+    }
+  }
+  .logo {
+    @media only screen and (max-width: 500px) {
+      left: 10px;
+    }
+    position: absolute;
+    z-index: -1;
+    top: 0px;
     left: 0;
     width: 100%;
-    height: 60px;
-    background-color: #54BA82;
-    box-shadow: 0px 1px 6px rgba(0,0,0,0.3);
-    h6 {
-      margin-left: 5px;
-      color: #fff;
-      display: inline-block;
-      line-height: 12.5px;
+    text-align: center;
+    img {
+      width: 170px;
     }
-    .button {
-      float: right;
+  }
+  .cart-button {
+    img {
+      width: 30px;
     }
-    .add {
-      background-color: #54BA82 !important;
+  }
+  .cart-count {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    color: color($colors, primary);
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $font-family-base;
+  }
+  .item {
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+    height: 100% !important;
+  }
+  .item-inner {
+    border-bottom: none !important;
+  }
+  .item-button {
+    h2 {
+      font-weight: 700;
     }
+  }
+  .item-img {
+    margin-right: 10px;
+    float: left;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
   }
 }

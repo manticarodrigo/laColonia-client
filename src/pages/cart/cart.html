@@ -3,11 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Carretilla</ion-title>
+    <ion-title class="page-title">
+      <img src="assets/cart.png">
+    </ion-title>
+    <div class="logo">
+      <img src="assets/logo.png">
+    </div>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
-
+  <div *ngIf="!items" class="no-items">
+    <h2>No has agregado productos.</h2>
+  </div>
+  <ion-list *ngIf="items">
+    <button class="item-button" ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <img class="item-img" src="{{item.url}}">
+      <h2>{{item.title}}</h2>
+      <p>C${{item.price}}</p>
+      <div class="item-note" item-right>
+        <img class="item-button" src="assets/remove-cart.png" (click)="removeItem(item)">
+      </div>
+    </button>
+  </ion-list>
 </ion-content>

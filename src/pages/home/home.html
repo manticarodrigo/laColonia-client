@@ -3,16 +3,38 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Inicio</ion-title>
+    <ion-title class="page-title">
+      <img src="assets/home.png">
+    </ion-title>
+    <div class="logo">
+      <img src="assets/logo.png">
+    </div>
+    <ion-buttons end>
+      <button class="cart-button" ion-button (click)="showCart()">
+        <img src="assets/cart.png">
+      </button>
+      <div class="cart-count">
+        {{orderProvider.items.length}}
+      </div>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content text-center>
-  <h3>Bienvenid@ a la aplicación de La Colonia!</h3>
-
-  <p>
-    Aquí econtrarás las mejores ofertas y podrás utilizar nuestros servicios exclusivos.
-  </p>
-
-  <button ion-button secondary menuToggle>Abrir Menú</button>
+  <ion-slides class="main-slides">
+    <ion-slide *ngFor="let slide of slides">
+      <img src="{{slide.url}}">
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let offer of offers" col-12 col-sm>
+        <div class="card">
+          <h1>{{offer.title}}</h1>
+          <img *ngIf="offer.url" [src]="offer.url">
+          <p>{{offer.description}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

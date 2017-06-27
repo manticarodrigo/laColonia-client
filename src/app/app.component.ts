@@ -21,8 +21,7 @@ export class LaColonia {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Inicio', component: 'home' },
-      { title: 'Búsqueda', component: 'search' },
-      { title: 'Carretilla', component: 'cart' }
+      { title: 'Búsqueda', component: 'search' }
     ];
 
   }

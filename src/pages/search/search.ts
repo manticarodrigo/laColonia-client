@@ -11,46 +11,55 @@ import { OrderProvider } from '../../providers/order/order';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  items: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private orderProvider: OrderProvider) {
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
     this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
+    const item1 = {
+      title: 'Pechuga entera cono congelada',
+      price: 35.5,
+      url: 'assets/pechuga.jpg',
+      sku: 1,
+      selected: false
     }
+    this.items.push(item1);
+    const item2 = {
+      title: 'Zuquini',
+      price: 15.9,
+      url: 'assets/zuquini.jpg',
+      sku: 2,
+      selected: false
+    }
+    this.items.push(item2);
   }
 
   itemTapped(event, item) {
     console.log("item tapped");
     console.log(event);
     console.log(item);
-    this.selectedItem = item;
   }
 
-  removeSelectedItem() {
-    console.log("remove selected item pressed");
-    this.selectedItem = null;
-  }
-
-  addSelectedItem() {
+  addItem(item) {
     console.log("add selected item pressed");
-    if (this.selectedItem) {
-      this.orderProvider.items.push(this.selectedItem);
-      this.selectedItem = null;
+    item.selected = true;
+    this.orderProvider.items.push(item);
+  }
+
+  removeItem(item) {
+    console.log("remove selected item pressed");
+    item.selected = false;
+    var index = this.orderProvider.items.indexOf(item);
+    if (index > -1) {
+      this.orderProvider.items.splice(index, 1);
     }
+  }
+
+  showCart() {
+    console.log("show cart pressed");
+    this.navCtrl.push('cart');
   }
 
 }

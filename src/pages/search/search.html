@@ -3,27 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Búsqueda</ion-title>
+    <ion-title class="page-title">
+      <img src="assets/search.png">
+    </ion-title>
+    <div class="logo">
+      <img src="assets/logo.png">
+    </div>
+    <ion-buttons end>
+      <button class="cart-button" ion-button (click)="showCart()">
+        <img src="assets/cart.png">
+      </button>
+      <div class="cart-count">
+        {{orderProvider.items.length}}
+      </div>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
+    <button class="item-button" ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <img class="item-img" src="{{item.url}}">
+      <h2>{{item.title}}</h2>
+      <p>C${{item.price}}</p>
       <div class="item-note" item-right>
-        {{item.note}}
+        <img *ngIf="!item.selected" class="item-button" src="assets/add-cart.png" (click)="addItem(item)">
+        <img *ngIf="item.selected" class="item-button" src="assets/remove-cart.png" (click)="removeItem(item)">
       </div>
     </button>
   </ion-list>
-  <div class="selected-item" *ngIf="selectedItem">
-    <h6>Añadir {{ selectedItem.title }} a la carretilla?</h6>
-    <button ion-button  (click)="removeSelectedItem()">
-      Quitar
-    </button>
-    <button class="add" ion-button  (click)="addSelectedItem()">
-      Añadir
-    </button>
-  </div>
 </ion-content>
