@@ -16,15 +16,19 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               private orderProvider: OrderProvider) {
     const offer = {
-      title: 'Oferton de Junio',
-      description: 'Este mes te brindamos precios exclusivos en nuestra selección de este mes.',
-      url: 'assets/sample.jpg'
-    };
+      title: 'Pechuga entera cono congelada',
+      price: 35.5,
+      url: 'assets/pechuga.jpg',
+      sku: 1,
+      selected: false
+    }
     const offer2 = {
-      title: 'Oferton de Julio',
-      description: 'Este mes te brindamos precios exclusivos en nuestra selección de este mes.',
-      url: 'assets/sample.jpg'
-    };
+      title: 'Zuquini',
+      price: 15.9,
+      url: 'assets/zuquini.jpg',
+      sku: 2,
+      selected: false
+    }
     this.offers.push(offer);
     this.offers.push(offer2);
 

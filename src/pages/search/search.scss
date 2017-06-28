@@ -37,6 +37,17 @@ page-search {
     font-size: 12px;
     font-family: $font-family-base;
   }
+  .search-bar {
+    background-color: color($colors, primary);
+    padding: 10px;
+    .input {
+      //height: 30px;
+      line-height: 0px;
+      border-radius: 5px;
+      //color: #fff;
+      background-color: #fff;
+    }
+  }
   .item {
     border-bottom: 0.5px solid rgba(0,0,0,0.1);
     height: 100% !important;

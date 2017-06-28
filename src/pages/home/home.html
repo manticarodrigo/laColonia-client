@@ -26,15 +26,34 @@
       <img src="{{slide.url}}">
     </ion-slide>
   </ion-slides>
-  <ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let offer of offers" col-12 col-sm>
+  <h2 style="text-align:left;margin-left:8px;">Ofertón</h2>
+  <ion-slides class="offer-slides">
+    <ion-slide *ngFor="let offer of offers">
         <div class="card">
-          <h1>{{offer.title}}</h1>
           <img *ngIf="offer.url" [src]="offer.url">
-          <p>{{offer.description}}</p>
         </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        <div class="details">
+          <h6>{{offer.title}}</h6>
+          <p>C${{offer.price}}</p>
+          <img *ngIf="!offer.selected" class="offer-button" src="assets/add-cart.png" (click)="addOffer(offer)">
+          <img *ngIf="offer.selected" class="offer-button" src="assets/remove-cart.png" (click)="removeOffer(offer)">
+        </div>
+      </ion-slide>
+  </ion-slides>
+  <hr>
+  <h2 style="text-align:left;margin-left:8px;">Miércoles Verde</h2>
+  <ion-slides class="offer-slides">
+    <ion-slide *ngFor="let offer of offers">
+        <div class="card">
+          <img *ngIf="offer.url" [src]="offer.url">
+        </div>
+        <div class="details">
+          <h6>{{offer.title}}</h6>
+          <p>C${{offer.price}}</p>
+          <img *ngIf="!offer.selected" class="offer-button" src="assets/add-cart.png" (click)="addOffer(offer)">
+          <img *ngIf="offer.selected" class="offer-button" src="assets/remove-cart.png" (click)="removeOffer(offer)">
+        </div>
+      </ion-slide>
+  </ion-slides>
+  <hr>
 </ion-content>
