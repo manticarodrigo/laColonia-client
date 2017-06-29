@@ -26,7 +26,10 @@
       <img src="{{slide.url}}">
     </ion-slide>
   </ion-slides>
-  <h2 style="text-align:left;margin-left:8px;">Ofertón</h2>
+  <div class="section-header">
+    <h2>Ofertón</h2>
+    <a (click)="viewOffers()">Ver lista ></a>
+  </div>
   <ion-slides class="offer-slides">
     <ion-slide *ngFor="let offer of offers">
         <div class="card">
@@ -41,7 +44,10 @@
       </ion-slide>
   </ion-slides>
   <hr>
-  <h2 style="text-align:left;margin-left:8px;">Miércoles Verde</h2>
+  <div class="section-header">
+    <h2>Miércoles Verde</h2>
+    <a (click)="viewOffers()">Ver lista ></a>
+  </div>
   <ion-slides class="offer-slides">
     <ion-slide *ngFor="let offer of offers">
         <div class="card">

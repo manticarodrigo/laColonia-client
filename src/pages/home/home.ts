@@ -55,4 +55,12 @@ export class HomePage {
     this.navCtrl.push('cart');
   }
 
+  viewOffers() {
+    console.log("view offers pressed");
+    this.navCtrl.push('list', {
+      title: 'El Ofertón',
+      items: this.offers
+    });
+  }
+
 }

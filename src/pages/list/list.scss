@@ -1,0 +1,22 @@
+page-list {
+  .item {
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+    height: 100% !important;
+  }
+  .item-inner {
+    border-bottom: none !important;
+  }
+  .item-button {
+    h2 {
+      font-weight: 700;
+    }
+  }
+  .item-img {
+    margin-right: 10px;
+    float: left;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}

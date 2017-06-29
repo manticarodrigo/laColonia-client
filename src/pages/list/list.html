@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button class="item-button" ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <img class="item-img" src="{{item.url}}">
+      <h2>{{item.title}}</h2>
+      <p>C${{item.price}}</p>
+      <div class="item-note" item-right>
+        <img *ngIf="!item.selected" class="item-button" src="assets/add-cart.png" (click)="addItem(item)">
+        <img *ngIf="item.selected" class="item-button" src="assets/remove-cart.png" (click)="removeItem(item)">
+      </div>
+    </button>
+  </ion-list>
+</ion-content>
